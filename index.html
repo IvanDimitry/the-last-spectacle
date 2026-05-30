@@ -1,119 +1,549 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Last Spectacle - Debord, the Internet, and the Age of Generative Reality</title>
-  <meta name="description" content="A modern nonfiction book by Ivan Dimitrijevic on Debord, the society of spectacle, the internet, platforms, algorithms, and generative AI.">
-  <meta property="og:title" content="The Last Spectacle">
-  <meta property="og:description" content="A sharp, modern rereading of Debord for the age of generative reality.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/the-last-spectacle-social-preview-1200x630.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Last Spectacle">
-  <meta name="twitter:description" content="The spectacle did not disappear. It learned to generate.">
-  <meta name="twitter:image" content="assets/the-last-spectacle-social-preview-1200x630.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Last Spectacle — Debord, the Internet, and the Age of Generative Reality</title>
+  <meta name="description" content="A short nonfiction book by Ivan Dimitrijevic on Debord, the internet, AI, synthetic authority, proof, memory, and generative reality." />
+  <meta name="author" content="Ivan Dimitrijevic" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Last Spectacle" />
+  <meta property="og:description" content="Debord, the Internet, and the Age of Generative Reality — a short book by Ivan Dimitrijevic." />
+  <meta property="og:image" content="https://ivandimitry.github.io/the-last-spectacle/the-last-spectacle-social-preview-1200x630.png" />
+  <meta property="og:url" content="https://ivandimitry.github.io/the-last-spectacle/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Last Spectacle" />
+  <meta name="twitter:description" content="Debord, the Internet, and the Age of Generative Reality — a short book by Ivan Dimitrijevic." />
+  <meta name="twitter:image" content="https://ivandimitry.github.io/the-last-spectacle/the-last-spectacle-social-preview-1200x630.png" />
+
   <style>
-    :root { --bg:#03060a; --panel:#07111a; --text:#f1f3f4; --muted:#a8b7bf; --blue:#23a9ff; --cyan:#32d6db; --green:#76d66f; --gold:#e7b84f; --line:rgba(67,209,222,.28); }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: radial-gradient(circle at 50% 0%, #0a1721 0%, var(--bg) 42%, #010204 100%); color:var(--text); line-height:1.6; }
-    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.18; background: repeating-linear-gradient(90deg, transparent 0 44px, rgba(28,148,184,.18) 45px, transparent 46px), linear-gradient(180deg, rgba(18,128,190,.12), transparent 30%, rgba(233,183,71,.05) 70%, transparent); }
-    a { color:var(--cyan); }
-    .wrap { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
-    .hero { padding:76px 0 64px; position:relative; }
-    .hero-grid { display:grid; grid-template-columns: 390px 1fr; gap:64px; align-items:center; }
-    .cover { width:100%; max-width:390px; border-radius:7px; box-shadow:0 25px 90px rgba(0,0,0,.65), 0 0 55px rgba(35,169,255,.16); }
-    .eyebrow { letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-size:.78rem; margin-bottom:20px; }
-    h1 { font-family: Georgia, 'Times New Roman', serif; font-weight:500; font-size:clamp(3.6rem, 8vw, 7.2rem); line-height:.93; margin:0 0 22px; letter-spacing:-.05em; }
-    .subtitle { font-size:clamp(1.25rem, 2.2vw, 1.75rem); color:var(--cyan); margin:0 0 24px; max-width:780px; }
-    .thesis { font-size:clamp(1.35rem, 2.8vw, 2.2rem); line-height:1.25; font-family: Georgia, 'Times New Roman', serif; margin:32px 0 34px; }
-    .thesis strong { color:var(--gold); font-weight:500; }
-    .cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-    .button { display:inline-block; text-decoration:none; color:#061017; background:linear-gradient(90deg,var(--cyan),var(--green),var(--gold)); padding:14px 20px; border-radius:10px; font-weight:800; box-shadow:0 0 24px rgba(50,214,219,.16); }
-    .ghost { display:inline-block; text-decoration:none; color:var(--text); border:1px solid var(--line); padding:13px 18px; border-radius:10px; background:rgba(255,255,255,.03); }
-    section { padding:58px 0; border-top:1px solid rgba(255,255,255,.07); }
-    h2 { font-size:clamp(2rem,4vw,3.4rem); line-height:1.05; margin:0 0 22px; font-family: Georgia, 'Times New Roman', serif; font-weight:500; }
-    .lead { color:var(--muted); font-size:1.16rem; max-width:780px; }
-    .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:30px; }
-    .card { border:1px solid var(--line); background:linear-gradient(180deg,rgba(7,17,26,.9),rgba(3,8,13,.84)); border-radius:16px; padding:22px; min-height:200px; box-shadow: inset 0 1px rgba(255,255,255,.06); }
-    .card b { color:var(--gold); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; }
-    .card h3 { margin:10px 0 8px; font-size:1.35rem; }
-    .card p { color:var(--muted); margin:0; }
-    .visuals { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:32px; }
-    .visuals img { width:100%; border-radius:14px; border:1px solid var(--line); box-shadow:0 18px 50px rgba(0,0,0,.35); }
-    .download { display:grid; grid-template-columns:1fr 340px; gap:38px; align-items:center; background:linear-gradient(135deg,rgba(35,169,255,.08),rgba(231,184,79,.08)); border:1px solid var(--line); border-radius:24px; padding:34px; }
-    .download img { width:100%; border-radius:10px; }
-    .meta { color:var(--muted); font-size:.95rem; }
-    footer { padding:44px 0 70px; color:var(--muted); border-top:1px solid rgba(255,255,255,.07); }
-    @media (max-width: 860px) { .hero-grid, .download { grid-template-columns:1fr; } .cover { max-width:300px; } .cards, .visuals { grid-template-columns:1fr 1fr; } }
-    @media (max-width: 540px) { .cards, .visuals { grid-template-columns:1fr; } .wrap { width:min(100% - 28px, 1120px); } }
+    :root {
+      --bg: #02050a;
+      --bg2: #07101a;
+      --panel: rgba(8, 18, 30, 0.72);
+      --panel2: rgba(10, 24, 38, 0.88);
+      --text: #f4f2ea;
+      --muted: #aab6c5;
+      --soft: #718094;
+      --blue: #28a8ff;
+      --cyan: #32e0f0;
+      --green: #7dff9a;
+      --gold: #ffc84b;
+      --line: rgba(72, 177, 255, 0.22);
+      --shadow: 0 20px 80px rgba(0, 0, 0, 0.55);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 72% 12%, rgba(0, 170, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 60% 58%, rgba(255, 200, 75, 0.11), transparent 32%),
+        linear-gradient(180deg, #010309 0%, #030812 42%, #010307 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        linear-gradient(rgba(44, 209, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44, 209, 255, 0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 78%, transparent 100%);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100vw - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 0;
+      color: rgba(244, 242, 234, 0.82);
+      letter-spacing: 0.02em;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      box-shadow: 0 0 24px rgba(50, 224, 240, 0.85);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      padding: 34px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.72fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid rgba(50, 224, 240, 0.22);
+      border-radius: 999px;
+      color: var(--cyan);
+      background: rgba(7, 22, 36, 0.58);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(4.6rem, 10vw, 9.2rem);
+      line-height: 0.86;
+      letter-spacing: -0.075em;
+      text-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
+    }
+
+    h1 .small {
+      display: block;
+      font-size: 0.34em;
+      letter-spacing: 0.02em;
+      margin-left: 0.08em;
+      margin-bottom: 0.08em;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .gold {
+      background: linear-gradient(100deg, #fff4c8 0%, #ffd36c 38%, #d59d28 74%, #fff0b0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      margin: 26px 0 0;
+      font-size: clamp(1.25rem, 2.4vw, 2.05rem);
+      line-height: 1.25;
+      color: #cad7e4;
+      max-width: 720px;
+    }
+
+    .subtitle span {
+      background: linear-gradient(90deg, var(--blue), var(--green), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 28px 0 0;
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      color: #061018;
+      background: linear-gradient(135deg, #35ddff, #8fff9b 50%, #ffd35f);
+      box-shadow: 0 16px 52px rgba(45, 204, 255, 0.18);
+      border: 0;
+    }
+    .btn.secondary {
+      background: rgba(10, 24, 38, 0.7);
+      color: var(--text);
+    }
+
+    .cover-card {
+      position: relative;
+      padding: 16px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(40, 168, 255, 0.25), rgba(255, 200, 75, 0.14));
+      box-shadow: var(--shadow);
+    }
+
+    .cover-card::before {
+      content: "";
+      position: absolute;
+      inset: -40px -30px;
+      background: radial-gradient(circle at 50% 45%, rgba(50, 224, 240, 0.22), transparent 52%);
+      z-index: -1;
+      filter: blur(4px);
+    }
+
+    .cover-card img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    section { padding: 68px 0; }
+
+    .section-title {
+      font-size: clamp(2rem, 4.6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.72;
+      margin: 0 0 34px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(10, 24, 38, 0.82), rgba(4, 10, 17, 0.82));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .idea-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .idea-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(9, 18, 30, 0.68);
+      border: 1px solid rgba(70, 185, 255, 0.16);
+      min-height: 176px;
+    }
+
+    .idea-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .idea-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .quote-panel {
+      padding: clamp(28px, 5vw, 54px);
+      margin-top: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 200, 75, 0.24);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 200, 75, 0.12), transparent 42%),
+        rgba(8, 18, 30, 0.78);
+    }
+
+    .quote-panel p {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+      max-width: 960px;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .visual-card {
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(7, 16, 26, 0.84);
+      border: 1px solid rgba(50, 224, 240, 0.16);
+      border-radius: 22px;
+      overflow: hidden;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .visual-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(50, 224, 240, 0.42);
+    }
+    .visual-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1.414;
+      object-fit: cover;
+      display: block;
+      background: #050a12;
+    }
+    .visual-card div { padding: 16px; }
+    .visual-card small {
+      display: block;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      margin-bottom: 6px;
+    }
+    .visual-card strong { font-size: 1rem; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .text-panel { padding: clamp(26px, 4vw, 44px); }
+    .text-panel h3 {
+      margin: 0 0 16px;
+      font-size: 1.45rem;
+    }
+    .text-panel p, .text-panel li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .text-panel ul {
+      margin: 18px 0 0;
+      padding-left: 20px;
+    }
+
+    .hero-img-panel {
+      min-height: 360px;
+      background:
+        linear-gradient(90deg, rgba(2,5,10,0.2), rgba(2,5,10,0.86)),
+        url('./the-last-spectacle-hero-1200x644.png') center / cover no-repeat;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .footer {
+      padding: 60px 0 38px;
+      color: var(--soft);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer a { color: var(--muted); }
+
+    @media (max-width: 960px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .cover-card { max-width: 520px; margin: 0 auto; }
+      .idea-grid, .visual-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100vw - 26px, 1180px); }
+      .hero { padding-top: 18px; }
+      h1 { font-size: clamp(3.8rem, 17vw, 5.4rem); }
+      .subtitle { font-size: 1.13rem; }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .idea-grid, .visual-grid { grid-template-columns: 1fr; }
+      section { padding: 50px 0; }
+    }
   </style>
 </head>
 <body>
+  <header class="wrap topbar">
+    <a href="https://ivandimitry.github.io/" class="brand" aria-label="Ivan Dimitrijevic homepage">
+      <span class="brand-mark"></span>
+      <span>Ivan Dimitrijevic</span>
+    </a>
+    <nav aria-label="Page navigation">
+      <a href="#idea">Idea</a>
+      <a href="#visuals">Visuals</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <img class="cover" src="assets/the-last-spectacle-cover.png" alt="The Last Spectacle book cover">
+    <section class="hero wrap" id="download">
+      <div class="hero-grid">
         <div>
-          <div class="eyebrow">Free nonfiction book - v1.0</div>
-          <h1>The Last Spectacle</h1>
-          <p class="subtitle">Debord, the Internet, and the Age of Generative Reality</p>
-          <p class="thesis">The spectacle did not disappear. <strong>It learned to generate.</strong></p>
+          <div class="kicker">Free digital book · PDF release v1.0</div>
+          <h1><span class="small">The</span><span class="gold">Last Spectacle</span></h1>
+          <p class="subtitle">Debord, the Internet, and the Age of <span>Generative Reality</span></p>
+          <p class="hero-copy">
+            A short nonfiction book about how representation moved from broadcast media to platforms, algorithms, and AI — and why proof, memory, judgment, and direct experience matter more when reality can be generated at scale.
+          </p>
           <div class="cta-row">
-            <a class="button" href="the-last-spectacle-final-release-v1-0.pdf">Read / Download the PDF</a>
-            <a class="ghost" href="#inside">See what is inside</a>
+            <a class="btn primary" href="./the-last-spectacle-final-release-v1-0.pdf" target="_blank" rel="noopener">Read / Download PDF</a>
+            <a class="btn secondary" href="#idea">Explore the argument</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="wrap">
-        <h2>A modern rereading of Debord for the age of generative reality.</h2>
-        <p class="lead">This book follows the spectacle from representation to broadcast media, from the internet to platforms, from algorithmic reality to generative AI. It is not an AI trend report. It is a systems diagnosis of how images, interfaces, and generated realities now shape what people see, trust, remember, and act on.</p>
-      </div>
-    </section>
-
-    <section id="inside">
-      <div class="wrap">
-        <h2>Inside the book</h2>
-        <div class="cards">
-          <div class="card"><b>Part I</b><h3>Representation</h3><p>How spectacle learns to stand between people and reality.</p></div>
-          <div class="card"><b>Part II</b><h3>The Broadcast World</h3><p>When spectacle scales through centralized media.</p></div>
-          <div class="card"><b>Part III</b><h3>The Interactive Spectacle</h3><p>When the audience becomes the interface.</p></div>
-          <div class="card"><b>Part IV</b><h3>Generative Reality</h3><p>When spectacle stops showing the world and starts producing it.</p></div>
-        </div>
-        <div class="visuals">
-          <img src="assets/part-01-representation-thumb.jpg" alt="Part I visual preview">
-          <img src="assets/part-02-the-broadcast-world-thumb.jpg" alt="Part II visual preview">
-          <img src="assets/part-03-the-interactive-spectacle-thumb.jpg" alt="Part III visual preview">
-          <img src="assets/part-04-generative-reality-thumb.jpg" alt="Part IV visual preview">
+        <div class="cover-card" aria-label="Book cover">
+          <img src="./the-last-spectacle-cover.png" alt="The Last Spectacle book cover" />
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap download">
-        <div>
-          <h2>Read the PDF</h2>
-          <p class="lead">Download the full v1.0 release. Use it as a thinking tool, critique it, share it, cite it, or send it to someone who still treats AI as a separate topic from media, attention, and trust.</p>
-          <p><a class="button" href="the-last-spectacle-final-release-v1-0.pdf">Download the book</a></p>
-          <p class="meta">PDF v1.0 - 214 pages - SHA-256: 9e13d221df094c1c...</p>
-        </div>
-        <img src="assets/the-last-spectacle-cover.png" alt="The Last Spectacle cover">
+    <section class="wrap" id="idea">
+      <h2 class="section-title">The spectacle did not disappear.</h2>
+      <p class="section-intro">
+        It moved from representation, to broadcast, to platforms, to algorithmic ranking, to generative reality. AI does not arrive into a direct world. It arrives into a world already trained to trust surfaces.
+      </p>
+
+      <div class="idea-grid">
+        <article class="idea-card">
+          <strong>Representation</strong>
+          <p>The image starts standing between people and reality. Appearance becomes a system.</p>
+        </article>
+        <article class="idea-card">
+          <strong>Broadcast</strong>
+          <p>Centralized media scales the frame. One message reaches millions and standardizes attention.</p>
+        </article>
+        <article class="idea-card">
+          <strong>Platforms</strong>
+          <p>The audience becomes the interface. The crowd performs, reacts, and trains the system.</p>
+        </article>
+        <article class="idea-card">
+          <strong>Generative AI</strong>
+          <p>The spectacle stops only showing the world and starts producing finished appearances on demand.</p>
+        </article>
+      </div>
+
+      <div class="quote-panel">
+        <p>The old spectacle asked us to watch. The platform spectacle asked us to perform. The generative spectacle can now produce appearance on demand.</p>
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <h2>Author note</h2>
-        <p class="lead">Ivan Dimitrijevic builds authority assets, trust systems, and market-memory infrastructure for B2B experts and teams through TrustPress AI. This book is part of that broader work: turning serious thinking into durable public assets.</p>
+    <section class="wrap" id="visuals">
+      <h2 class="section-title">Inside the book</h2>
+      <p class="section-intro">
+        The book is organized in four parts, each with a visual concept map designed to make the argument easier to remember.
+      </p>
+
+      <div class="visual-grid">
+        <a class="visual-card" href="./part-01-representation.png" target="_blank" rel="noopener">
+          <img src="./part-01-representation-thumb.jpg" alt="Part I — Representation" />
+          <div><small>Part I</small><strong>Representation</strong></div>
+        </a>
+        <a class="visual-card" href="./part-02-the-broadcast-world.png" target="_blank" rel="noopener">
+          <img src="./part-02-the-broadcast-world-thumb.jpg" alt="Part II — The Broadcast World" />
+          <div><small>Part II</small><strong>The Broadcast World</strong></div>
+        </a>
+        <a class="visual-card" href="./part-03-the-interactive-spectacle.png" target="_blank" rel="noopener">
+          <img src="./part-03-the-interactive-spectacle-thumb.jpg" alt="Part III — The Interactive Spectacle" />
+          <div><small>Part III</small><strong>The Interactive Spectacle</strong></div>
+        </a>
+        <a class="visual-card" href="./part-04-generative-reality.png" target="_blank" rel="noopener">
+          <img src="./part-04-generative-reality-thumb.jpg" alt="Part IV — Generative Reality" />
+          <div><small>Part IV</small><strong>Generative Reality</strong></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="split">
+        <div class="hero-img-panel" aria-hidden="true"></div>
+        <div class="panel text-panel">
+          <h3>Why this book exists</h3>
+          <p>
+            This is not an anti-AI book. It is a book about proof, trust, authority, public memory, and what happens when representation becomes generative.
+          </p>
+          <ul>
+            <li>For founders and operators thinking about trust in the AI era.</li>
+            <li>For marketers tired of confusing visibility with credibility.</li>
+            <li>For readers who feel that Debord suddenly became current again.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="panel text-panel" style="text-align:center;">
+        <h2 class="section-title" style="margin-bottom: 18px;">Reality needs witnesses.</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+          The future will not arrive by saying, “I will replace reality.” It will arrive by saying, “I will make reality easier to handle.”
+        </p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn primary" href="./the-last-spectacle-final-release-v1-0.pdf" target="_blank" rel="noopener">Read / Download PDF</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="wrap">The Last Spectacle - Ivan Dimitrijevic - Free PDF release v1.0</div>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>© 2026 Ivan Dimitrijevic · The Last Spectacle</div>
+      <div><a href="https://ivandimitry.github.io/">ivandimitry.github.io</a></div>
+    </div>
   </footer>
 </body>
 </html>
